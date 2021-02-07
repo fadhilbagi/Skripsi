@@ -103,6 +103,7 @@ class kuis extends MY_Controller {
 			$ans10=$this->input->post('ans10');
 			$data = [
                 'judul' => $judul, 'mapel' => $mapel, 'pengajar' => $pengajar,'media' => $media, 'P1' => $P1, 'P2' => $P2, 'P3' => $P3, 'P4' => $P4, 'P5' => $P5, 'P6' => $P6, 'P7' => $P7, 'P8' => $P8, 'P9' => $P9,'P10' => $P10,  'A1' => $A1, 'A2' => $A2, 'A3' => $A3, 'A4' => $A4, 'A5' => $A5, 'A6' => $A6, 'A7' => $A7, 'A8' => $A8, 'A9' => $A9,'A10' => $A10, 'B1' => $B1, 'B2' => $B2, 'B3' => $B3, 'B4' => $B4, 'B5' => $B5, 'B6' => $B6, 'B7' => $B7, 'B8' => $B8, 'B9' => $B9,'B10' => $B10, 'C1' => $C1, 'C2' => $C2, 'C3' => $C3, 'C4' => $C4, 'C5' => $C5, 'C6' => $C6, 'C7' => $C7, 'C8' => $C8, 'C9' => $C9, 'C10' => $C10,'D1' => $D1, 'D2' => $D2, 'D3' => $D3, 'D4' => $D4, 'D5' => $D5, 'D6' => $D6, 'D7' => $D7, 'D8' => $D8, 'D9' => $D9,'D10' => $D10,
+				'ANS1' => $ans1, 'ANS2' => $ans2, 'ANS3' => $ans3, 'ANS4' => $ans4, 'ANS5' => $ans5, 'ANS6' => $ans6, 'ANS7' => $ans7, 'ANS8' => $ans8, 'ANS9' => $ans9,'ANS10' => $ans10,
             ];
 			
             //pass the input values to the register model

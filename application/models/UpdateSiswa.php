@@ -5,6 +5,10 @@ class UpdateSiswa extends CI_Model{
         $hasil=$this->db->query("SELECT * FROM users WHERE email='$email'");
         return $hasil;
     }
+	function show_media($email){
+        $hasil=$this->db->query("SELECT * FROM media WHERE email='$email'");
+        return $hasil;
+    }
 	 function show_kuis($id){
         $hasil=$this->db->query("SELECT * FROM assign WHERE id='$id'");
         return $hasil;

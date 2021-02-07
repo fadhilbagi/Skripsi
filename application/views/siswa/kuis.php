@@ -28,19 +28,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-		  			<?php
-						foreach($data2->result_array() as $i):
-						for($a=1;$a<=10;$a++){
-						$b=strval($a);
-						$c='Q'.$b;
-						$d='ANS'.$b;
-						$e='mapel';
-						
-						?>	
-						<input type="text" name="<?php echo $d?>" value="<?php echo $i[$d];?>">
-						<?php
-						}
-					?>
+		  			
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Quiz</h1>
           </div>
@@ -54,7 +42,9 @@
                   <h6 class="m-0 font-weight-bold text-primary">Soal</h6>
                   
                 </div>
-				
+				<?php
+						foreach($data2->result_array() as $i):
+						?>
 				
         
                 <div class="col-lg-12 col-xl ">
@@ -67,23 +57,34 @@
                                 <div class="col-lg  ">
 								Judul 	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp: <?php echo $i['judul'];?><br>
 								Mata Kuliah : <?php echo $i['mapel'];?><br>
-								Media  	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp: <?php echo $i['media'];?><br><br/>
-								
+								Media  	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp: <?php echo $i['media'];?> &nbsp
+								<a type="button" class="btn btn-success btn-sm" href="<?php echo base_url('uploads/visual/'.$i['media']) ?>">Download</button></a><br><br/>
 													<form method="post" role="form" action="<?php echo base_url().'index.php/siswa/kuis/jawab'?>">
+														<?php for($a=1;$a<=10;$a++){
+						$b=strval($a);
+						$c='Q'.$b;
+						$d='ANS'.$b;
+						$e='mapel';
+						
+						?>	
+						<input type="hidden" name="<?php echo $d?>" value="<?php echo $i[$d];?>">
+						<?php
+						}
+					?>
 														<input type="hidden" name="id" value="">
 														<div class="form-group">
 															<b><label>1.<?php echo $i['P1'];?></b>
 														<div class="form-group">
-														<input type="radio" name="ans1" value="A"><label>A.<?php echo $i['A1'];?></label>
+														<input type="radio" name="ans1" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A1'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans1" value="B"><label>B.<?php echo $i['B1'];?></label>
+														<input type="radio" name="ans1" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B1'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans1" value="C"><label>C.<?php echo $i['B1'];?></label>
+														<input type="radio" name="ans1" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C1'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans1" value="D"><label>D.<?php echo $i['B1'];?></label>
+														<input type="radio" name="ans1" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D1'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -91,16 +92,16 @@
 															<b><label>2.<?php echo $i['P2'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans2" value="A"><label>A.<?php echo $i['A2'];?></label>
+														<input type="radio" name="ans2" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A2'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans2" value="B"><label>B.<?php echo $i['B2'];?></label>
+														<input type="radio" name="ans2" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B2'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans2" value="C"><label>C.<?php echo $i['B2'];?></label>
+														<input type="radio" name="ans2" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C2'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans2" value="D"><label>D.<?php echo $i['B2'];?></label>
+														<input type="radio" name="ans2" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D2'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -108,16 +109,16 @@
 															<b><label>3.<?php echo $i['P3'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans3" value="A"><label>A.<?php echo $i['A3'];?></label>
+														<input type="radio" name="ans3" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A3'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans3" value="B"><label>B.<?php echo $i['B3'];?></label>
+														<input type="radio" name="ans3" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B3'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans3" value="C"><label>C.<?php echo $i['B3'];?></label>
+														<input type="radio" name="ans3" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C3'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans3" value="D"><label>D.<?php echo $i['B3'];?></label>
+														<input type="radio" name="ans3" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D3'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -125,16 +126,16 @@
 															<b><label>4.<?php echo $i['P4'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans4" value="A"><label>A.<?php echo $i['A4'];?></label>
+														<input type="radio" name="ans4" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A4'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans4" value="B"><label>B.<?php echo $i['B4'];?></label>
+														<input type="radio" name="ans4" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B4'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans4" value="C"><label>C.<?php echo $i['B4'];?></label>
+														<input type="radio" name="ans4" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C4'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans4" value="D"><label>D.<?php echo $i['B4'];?></label>
+														<input type="radio" name="ans4" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D4'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -142,32 +143,32 @@
 															<b><label>5.<?php echo $i['P5'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans5" value="A"><label>A.<?php echo $i['A5'];?></label>
+														<input type="radio" name="ans5" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A5'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans5" value="B"><label>B.<?php echo $i['B5'];?></label>
+														<input type="radio" name="ans5" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B5'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans5" value="C"><label>C.<?php echo $i['B5'];?></label>
+														<input type="radio" name="ans5" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C5'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans5" value="D"><label>D.<?php echo $i['B5'];?></label>
+														<input type="radio" name="ans5" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D5'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
 														<div class="form-group">
 															<b><label>6.<?php echo $i['P6'];;?></b>
 														<div class="form-group">
-														<input type="radio" name="ans6" value="A"><label>A.<?php echo $i['A6'];?></label>
+														<input type="radio" name="ans6" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A6'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans6" value="B"><label>B.<?php echo $i['B6'];?></label>
+														<input type="radio" name="ans6" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B6'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans6" value="C"><label>C.<?php echo $i['B6'];?></label>
+														<input type="radio" name="ans6" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C6'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans6" value="D"><label>D.<?php echo $i['B6'];?></label>
+														<input type="radio" name="ans6" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D6'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -175,16 +176,16 @@
 															<b><label>7.<?php echo $i['P7'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans7" value="A"><label>A.<?php echo $i['A7'];?></label>
+														<input type="radio" name="ans7" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A7'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans7" value="B"><label>B.<?php echo $i['B7'];?></label>
+														<input type="radio" name="ans7" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B7'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans7" value="C"><label>C.<?php echo $i['B7'];?></label>
+														<input type="radio" name="ans7" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C7'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans7" value="D"><label>D.<?php echo $i['B7'];?></label>
+														<input type="radio" name="ans7" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D7'];?></label>
 														</div>
 														
 														
@@ -193,16 +194,16 @@
 															<b><label>8.<?php echo $i['P8'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans8" value="A"><label>A.<?php echo $i['A8'];?></label>
+														<input type="radio" name="ans8" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A8'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans8" value="B"><label>B.<?php echo $i['B8'];?></label>
+														<input type="radio" name="ans8" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B8'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans8" value="C"><label>C.<?php echo $i['B8'];?></label>
+														<input type="radio" name="ans8" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C8'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans8" value="D"><label>D.<?php echo $i['B8'];?></label>
+														<input type="radio" name="ans8" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D8'];?></label>
 														</div>
 														
 														<input type="hidden" name="id" value="">
@@ -210,16 +211,16 @@
 															<b><label>9.<?php echo $i['P9'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans9" value="A"><label>A.<?php echo $i['A9'];?></label>
+														<input type="radio" name="ans9" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A9'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans9" value="B"><label>B.<?php echo $i['B9'];?></label>
+														<input type="radio" name="ans9" value="B"><label style="padding-left:10px;">B. &nbsp<?php echo $i['B9'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans9" value="C"><label>C.<?php echo $i['B9'];?></label>
+														<input type="radio" name="ans9" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C9'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans9" value="D"><label>D.<?php echo $i['B9'];?></label>
+														<input type="radio" name="ans9" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D9'];?></label>
 														</div>
 														
 														
@@ -228,16 +229,16 @@
 															<b><label>10.<?php echo $i['P10'];;?></b>
 														
 														<div class="form-group">
-														<input type="radio" name="ans10" value="A"><label>A.<?php echo $i['A10'];?></label>
+														<input type="radio" name="ans10" value="A"><label style="padding-left:10px;">A. &nbsp<?php echo $i['A10'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans10" value="B"><label>B.<?php echo $i['B10'];?></label>
+														<input type="radio" name="ans10" value="B"><label style="padding-left:10px;"> B. &nbsp<?php echo $i['B10'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans10" value="C"><label>C.<?php echo $i['B10'];?></label>
+														<input type="radio" name="ans10" value="C"><label style="padding-left:10px;">C. &nbsp<?php echo $i['C10'];?></label>
 														</div>
 														<div class="form-group">
-														<input type="radio" name="ans10" value="D"><label>D.<?php echo $i['B10'];?></label>
+														<input type="radio" name="ans10" value="D"><label style="padding-left:10px;">D. &nbsp<?php echo $i['D10'];?></label>
 														</div>
 														<center><button type="submit" class="btn btn-primary">Submit</button>
 													</form>

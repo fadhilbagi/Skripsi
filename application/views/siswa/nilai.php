@@ -28,19 +28,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-		  			<?php
-						foreach($data2->result_array() as $i):
-						for($a=1;$a<=10;$a++){
-						$b=strval($a);
-						$c='Q'.$b;
-						$d='ANS'.$b;
-						$e='mapel';
-						
-						?>	
-						<input type="text" name="<?php echo $d?>" value="<?php echo $i[$d];?>">
-						<?php
-						}
-					?>
+		  			
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Quiz</h1>
           </div>
@@ -51,7 +39,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Soal</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Hasil</h6>
                   
                 </div>
 				
@@ -63,189 +51,8 @@
                             <br/>
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg  ">
-								<?php echo $this->session->userdata['nilai'];?>
-								Judul 	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp: <?php echo $i['judul'];?><br>
-								Mata Kuliah : <?php echo $i['mapel'];?><br>
-								Media  	&nbsp 	&nbsp 	&nbsp 	&nbsp 	&nbsp: <?php echo $i['media'];?><br><br/>
-								
-													<form method="post" role="form" action="<?php echo base_url().'index.php/siswa/kuis/jawab'?>">
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>1.<?php echo $i['P1'];?></b>
-														<div class="form-group">
-														<input type="radio" name="ans1" value="A"><label>A.<?php echo $i['A1'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans1" value="B"><label>B.<?php echo $i['B1'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans1" value="C"><label>C.<?php echo $i['B1'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans1" value="D"><label>D.<?php echo $i['B1'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>2.<?php echo $i['P2'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans2" value="A"><label>A.<?php echo $i['A2'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans2" value="B"><label>B.<?php echo $i['B2'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans2" value="C"><label>C.<?php echo $i['B2'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans2" value="D"><label>D.<?php echo $i['B2'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>3.<?php echo $i['P3'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans3" value="A"><label>A.<?php echo $i['A3'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans3" value="B"><label>B.<?php echo $i['B3'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans3" value="C"><label>C.<?php echo $i['B3'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans3" value="D"><label>D.<?php echo $i['B3'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>4.<?php echo $i['P4'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans4" value="A"><label>A.<?php echo $i['A4'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans4" value="B"><label>B.<?php echo $i['B4'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans4" value="C"><label>C.<?php echo $i['B4'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans4" value="D"><label>D.<?php echo $i['B4'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>5.<?php echo $i['P5'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans5" value="A"><label>A.<?php echo $i['A5'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans5" value="B"><label>B.<?php echo $i['B5'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans5" value="C"><label>C.<?php echo $i['B5'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans5" value="D"><label>D.<?php echo $i['B5'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>6.<?php echo $i['P6'];;?></b>
-														<div class="form-group">
-														<input type="radio" name="ans6" value="A"><label>A.<?php echo $i['A6'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans6" value="B"><label>B.<?php echo $i['B6'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans6" value="C"><label>C.<?php echo $i['B6'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans6" value="D"><label>D.<?php echo $i['B6'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>7.<?php echo $i['P7'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans7" value="A"><label>A.<?php echo $i['A7'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans7" value="B"><label>B.<?php echo $i['B7'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans7" value="C"><label>C.<?php echo $i['B7'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans7" value="D"><label>D.<?php echo $i['B7'];?></label>
-														</div>
-														
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>8.<?php echo $i['P8'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans8" value="A"><label>A.<?php echo $i['A8'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans8" value="B"><label>B.<?php echo $i['B8'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans8" value="C"><label>C.<?php echo $i['B8'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans8" value="D"><label>D.<?php echo $i['B8'];?></label>
-														</div>
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>9.<?php echo $i['P9'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans9" value="A"><label>A.<?php echo $i['A9'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans9" value="B"><label>B.<?php echo $i['B9'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans9" value="C"><label>C.<?php echo $i['B9'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans9" value="D"><label>D.<?php echo $i['B9'];?></label>
-														</div>
-														
-														
-														<input type="hidden" name="id" value="">
-														<div class="form-group">
-															<b><label>10.<?php echo $i['P10'];;?></b>
-														
-														<div class="form-group">
-														<input type="radio" name="ans10" value="A"><label>A.<?php echo $i['A10'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans10" value="B"><label>B.<?php echo $i['B10'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans10" value="C"><label>C.<?php echo $i['B10'];?></label>
-														</div>
-														<div class="form-group">
-														<input type="radio" name="ans10" value="D"><label>D.<?php echo $i['B10'];?></label>
-														</div>
-														<center><button type="submit" class="btn btn-primary">Submit</button>
-													</form>
-														<?php endforeach;?>															
-									</div>				 
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
+						<center><b><h1>Nilai<h1>
+								<b><?php echo $this->session->userdata['nilai'];?></b><br>
                             <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->

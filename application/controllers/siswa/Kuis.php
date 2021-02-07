@@ -39,14 +39,14 @@ class Kuis extends MY_Controller {
         $d=0;
 		for($a=1;$a<=10;$a++){
 			$e=strval($a);
-			$b=$this->input->post('ans'.$e);
-			$c=$this->input->post('Q'.$e);
+			$b=$this->input->post('ANS'.$e);
+			$c=$this->input->post('ans'.$e);
 			
 			if ($b==$c)
 				$d++;
 			
 		}
-		$nilai=$d;
+		$nilai=$d*10;
 		$this->session->set_userdata('nilai', $nilai);
         redirect('siswa/nilai');
     }
