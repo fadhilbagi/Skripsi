@@ -1,14 +1,13 @@
 ###################
-What is CodeIgniter
+What is Skripsi
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+CodeIgniter is an is a web-based learning media recommendation system using a codeigniter framework
+for educational institutions. This system is made to provide recommendations for learning media that are in accordance with the learning styles of students. 
+System Features: 
+- Determining learners' learning styles
+- Upload and Download learning media
+- Quiz Mangement
 
 *******************
 Release Information
@@ -22,9 +21,48 @@ latest stable release please visit the `CodeIgniter Downloads
 Changelog and New Features
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Version 1.0.0
+=============
 
+Release Date: 06 January 2021
+
+-  General Changes
+
+   -  Creating All general feature for this system
+   -  Updated UI using Bootstrap and Use Framework Codeigniter.
+   
+**************************
+Explaination
+**************************
+This system use 2 type system that is guru (admin) and siswa (user)
+For All :
+  - Controllers 
+    - Login     (Login User)
+    - LoginGuru (Login Admin)
+    - Register  (Register User)
+    - Register  (Register Admin)
+For Admin :
+  - Controllers (Folder Guru)
+    - Overview (Profile Admin)
+    - Kuis (Make a Quiz)
+    - Upload M (Upload Learning Media)
+    - Person (RUD Quiz)
+For User :
+  - Controllers (Folder Siswa)
+    - Overview (Profile User)
+    - Kuis (Quiz Page)
+    - Media (Download Learning Media)
+    - Person (View Quiz)
+
+-Models All User
+  - LoginModel    (Login)
+  - RegisterModel (Register)
+  - Media_Model   (Media)
+  - Person_model  (CRUD model Data Admin)
+  - Person_model2 (CRUD model Data User)
+  - UpdateGuru    (CRUD model Profile Admin)
+  - UpdateSiswa   (CRUD model Profile Siswa)
+  
 *******************
 Server Requirements
 *******************
@@ -38,16 +76,21 @@ issues, as well as missing features.
 ************
 Installation
 ************
+-  Import Database .....
+-  Run Use any PHP Development Environtment like XAMPP
 
+   -  Creating All general feature for this system
+   -  Updated UI using Bootstrap and Use Framework Codeigniter.
+   
 Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
 of the CodeIgniter User Guide.
+
+
 
 *******
 License
 *******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+This System is free for learning purpose. Contact for more information @fadhil09bagi@gmail.com
 
 *********
 Resources
