@@ -2,12 +2,9 @@
 What is Skripsi
 ###################
 
-CodeIgniter is an is a web-based learning media recommendation system using a codeigniter framework
+Skripsi is a web-based learning media recommendation system using a codeigniter framework
 for educational institutions. This system is made to provide recommendations for learning media that are in accordance with the learning styles of students. 
-System Features: 
-- Determining learners' learning styles
-- Upload and Download learning media
-- Quiz Mangement
+System features of determining learners' learning styles, Upload and Download learning media and Quiz Mangement
 
 *******************
 Release Information
