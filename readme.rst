@@ -50,11 +50,14 @@ For Admin :
 For User :
   - Controllers (Folder Siswa)
     - Overview (Profile User)
+    
     - Kuis (Quiz Page)
+    
     - Media (Download Learning Media)
+    
     - Person (View Quiz)
 
--Models All User
+Models All User
   - LoginModel    (Login)
   - RegisterModel (Register)
   - Media_Model   (Media)
