@@ -37,18 +37,29 @@ Explaination
 This system use 2 type system that is guru (admin) and siswa (user)
 For All :
   - Controllers 
+  
     - Login     (Login User)
+    
     - LoginGuru (Login Admin)
+    
     - Register  (Register User)
+    
     - Register  (Register Admin)
+    
 For Admin :
   - Controllers (Folder Guru)
+  
     - Overview (Profile Admin)
+    
     - Kuis (Make a Quiz)
+    
     - Upload M (Upload Learning Media)
+    
     - Person (RUD Quiz)
+    
 For User :
   - Controllers (Folder Siswa)
+  
     - Overview (Profile User)
     
     - Kuis (Quiz Page)
