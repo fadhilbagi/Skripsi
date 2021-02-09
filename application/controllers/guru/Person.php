@@ -22,9 +22,11 @@ class Person extends CI_Controller {
         // load view admin/overview.php
 		//$x['data2']=$this->UpdateSiswa->show_user($this->session->userdata('email'));
 		$email=	$this->session->userdata('email2');
-        $this->load->view("guru/person_view",array('error' => ' ' ,'id'=>$this->UpdateGuru->show_kode($this->session->userdata('email2')),'data2' => $this->UpdateGuru->show_user($email)));
+		$bidang= $this->UpdateGuru->show_bidang($email);
+        $this->load->view("guru/person_view",array('media'=>$this->UpdateGuru->getmedia($email),'error' => ' ' ,'groups'=>$this->UpdateGuru->getmatakuliah($bidang),'id'=>$this->UpdateGuru->show_kode($this->session->userdata('email2')),'data2' => $this->UpdateGuru->show_user($email)));
 		
 	}
+	
 	
 
 	public function ajax_list()

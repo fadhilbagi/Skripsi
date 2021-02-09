@@ -6,6 +6,7 @@ class Kuis extends MY_Controller {
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('UpdateSiswa');
+		$this->load->model('person_model','person');
 		
 	}
 

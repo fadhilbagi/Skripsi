@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Person_model extends CI_Model {
 
 	var $table = 'assign';
-	var $column_order = array('pengajar','matkul','judul','media','dob',null); //set column field database for datatable orderable
-	var $column_search = array('pengajar','matkul','judul','media'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-	var $order = array('id' => 'desc'); // default order 
+	var $column_order = array('pengajar','mapel','judul','media','dob',null); //set column field database for datatable orderable
+	var $column_search = array('assign.pengajar','mapel.mapel','assign.judul','assign.media'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $order = array('assign.id' => 'desc'); // default order 
 
 
 	public function __construct()
@@ -18,7 +18,9 @@ class Person_model extends CI_Model {
 	private function _get_datatables_query()
 	{
 		$email=$this->session->userdata('email2');
-		$this->db->from($this->table)->where('pengajar',$email);
+		$this->db->select('*');
+$this->db->from('assign');
+$this->db->join('mapel', 'mapel.mapel = assign.mapel');
 
 		$i = 0;
 	
@@ -72,14 +74,19 @@ class Person_model extends CI_Model {
 
 	public function count_all()
 	{
-		$this->db->from($this->table);
+		$this->db->select('*');
+$this->db->from('assign');
+$this->db->join('mapel', 'mapel.id = assign.id');
+$this->db->order_by('mapel.id');
 		return $this->db->count_all_results();
 	}
 
 	public function get_by_id($id)
 	{
-		$this->db->from($this->table);
-		$this->db->where('id',$id);
+		$this->db->select('*');
+$this->db->from('assign');
+$this->db->join('mapel', 'mapel.id = assign.id');
+$this->db->order_by('mapel.id');
 		$query = $this->db->get();
 
 		return $query->row();
@@ -102,6 +109,5 @@ class Person_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete($this->table);
 	}
-
 
 }

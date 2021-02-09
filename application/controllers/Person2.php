@@ -29,7 +29,7 @@ class Person2 extends CI_Controller {
 
 			//add html for action
 			$row[] = '<form action="person2/kuis" method="post" >
-  <button class="btn btn-sm btn-primary" name="id" type="submit" value="'."'".$person->id."'".'">Get Started</button>
+  <button class="btn btn-sm btn-primary" name="id" type="submit" value="'."'".$person->id."'".'">Start</button>
  </form>
 ';
 		

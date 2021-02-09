@@ -226,12 +226,70 @@ function edit_person(id)
         {
             $('[name="id"]').val(data.id);
             $('[name="judul"]').val(data.judul);
-            $('[name="matkul"]').val(data.matkul);
+            $('[name="mapel"]').val(data.mapel);
             $('[name="media"]').val(data.media);
-			
-            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-            $('.modal-title').text('Edit Person'); // Set title to Bootstrap modal title
-
+			$('[name="P1"]').val(data.P1);
+			$('[name="P2"]').val(data.P2);
+			$('[name="P3"]').val(data.P3);
+			$('[name="P4"]').val(data.P4);
+			$('[name="P5"]').val(data.P5);
+			$('[name="P6"]').val(data.P6);
+			$('[name="P7"]').val(data.P7);
+			$('[name="P8"]').val(data.P8);
+			$('[name="P9"]').val(data.P9);
+			$('[name="P10"]').val(data.P10);
+            $('[name="A1"]').val(data.A1);
+			$('[name="A2"]').val(data.A2);
+			$('[name="A3"]').val(data.A3);
+			$('[name="A4"]').val(data.A4);
+			$('[name="A5"]').val(data.A5);
+			$('[name="A6"]').val(data.A6);
+			$('[name="A7"]').val(data.A7);
+			$('[name="A8"]').val(data.A8);
+			$('[name="A9"]').val(data.A9);
+			$('[name="A10"]').val(data.A10);
+			$('[name="B1"]').val(data.B1);
+			$('[name="B2"]').val(data.B2);
+			$('[name="B3"]').val(data.B3);
+			$('[name="B4"]').val(data.B4);
+			$('[name="B5"]').val(data.B5);
+			$('[name="B6"]').val(data.B6);
+			$('[name="B7"]').val(data.B7);
+			$('[name="B8"]').val(data.B8);
+			$('[name="B9"]').val(data.B9);
+			$('[name="B10"]').val(data.B10);
+			$('[name="C1"]').val(data.C1);
+			$('[name="C2"]').val(data.C2);
+			$('[name="C3"]').val(data.C3);
+			$('[name="C4"]').val(data.C4);
+			$('[name="C5"]').val(data.C5);
+			$('[name="C6"]').val(data.C6);
+			$('[name="C7"]').val(data.C7);
+			$('[name="C8"]').val(data.C8);
+			$('[name="C9"]').val(data.C9);
+			$('[name="C10"]').val(data.C10);
+			$('[name="D1"]').val(data.D1);
+			$('[name="D2"]').val(data.D2);
+			$('[name="D3"]').val(data.D3);
+			$('[name="D4"]').val(data.D4);
+			$('[name="D5"]').val(data.D5);
+			$('[name="D6"]').val(data.D6);
+			$('[name="D7"]').val(data.D7);
+			$('[name="D8"]').val(data.D8);
+			$('[name="D9"]').val(data.D9);
+			$('[name="D10"]').val(data.D10);
+			$('[name="ANS1"]').val(data.ANS1);
+			$('[name="ANS2"]').val(data.ANS2);
+			$('[name="ANS3"]').val(data.ANS3);
+			$('[name="ANS4"]').val(data.ANS4);
+			$('[name="ANS5"]').val(data.ANS5);
+			$('[name="ANS6"]').val(data.ANS6);
+			$('[name="ANS7"]').val(data.ANS7);
+			$('[name="ANS8"]').val(data.ANS8);
+			$('[name="ANS9"]').val(data.ANS9);
+			$('[name="ANS10"]').val(data.ANS10);
+			$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+            
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -319,35 +377,120 @@ function delete_person(id)
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title">Person Form</h3>
+               
             </div>
             <div class="modal-body form">
                 <form action="#" id="form" class="form-horizontal">
                     <input type="hidden" value="" name="id"/> 
 					<input type="hidden" value="" name="email"/> 
                     <div class="form-body">
+                        
                         <div class="form-group">
-                            <label class="control-label col-md-3">Matkul</label>
-                            <div class="col-md-9">
-                                <input name="matkul" placeholder="matkul" class="form-control" type="text">
+                            <b><label class="control-label col-md-3">Judul</label>
+                           
+                                <input name="judul" placeholder="Judul" class="form-control" type="text">
                                 <span class="help-block"></span>
-                            </div>
+                            
+                       <div>
+						<div class="form-group">
+                            <br><label class="control-label col-md-3">Mata Kuliah</label>
+                            
+                                <select value="mapel"name="mapel" id="mapel"required class="form-control">
+						<?php
+							foreach($groups as $row)
+							{ 
+								echo '<option value="'.$row->mapel.'">'.$row->mapel.'</option>';
+							}
+							?>
+				</select>
+								<span class="help-block"></span>
+                            
                         </div>
                         
                         <div class="form-group">
-                            <label class="control-label col-md-3">Judul</label>
-                            <div class="col-md-9">
-                                <input name="judul" placeholder="Judul" class="form-control" type="text">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="control-label col-md-3">Media</label>
-                            <div class="col-md-9">
-                                <textarea name="media" placeholder="media" class="form-control" type="text"></textarea>
-                                <span class="help-block"></span>
-                            </div>
+                            
+                                <select required class="form-control" value="media"name="media" id="media">
+   <?php 
+			
+            foreach($media as $row)
+            { 
+              echo '<option value="'.$row->name.'">'.$row->name.'</option>';
+            }
+            ?>
+</select>
+                          </b><br>
                         </div>
+						<b>Pertanyaan 1 <textarea name="P1" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A1" required class="form-control" placeholder="Enter text">
+b. <input name="B1" required class="form-control" placeholder="Enter text">
+c. <input name="C1" required class="form-control" placeholder="Enter text">
+d. <input name="D1" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS1" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 2 <textarea name="P2" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A2" required class="form-control" placeholder="Enter text">
+b. <input name="B2" required class="form-control" placeholder="Enter text">
+c. <input name="C2" required class="form-control" placeholder="Enter text">
+d. <input name="D2" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS2" required class="form-control" ><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 3 <textarea name="P3" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A3" required class="form-control" placeholder="Enter text">
+b. <input name="B3" required class="form-control" placeholder="Enter text">
+c. <input name="C3" required class="form-control" placeholder="Enter text">
+d. <input name="D3" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS3" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 4 <textarea name="P4" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A4" required class="form-control" placeholder="Enter text">
+b. <input name="B4" required class="form-control" placeholder="Enter text">
+c. <input name="C4" required class="form-control" placeholder="Enter text">
+d. <input name="D4" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS4" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 5 <textarea name="P5" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A5" required class="form-control" placeholder="Enter text">
+b. <input name="B5" required class="form-control" placeholder="Enter text">
+c. <input name="C5" required class="form-control" placeholder="Enter text">
+d. <input name="D5" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS5" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 6 <textarea name="P6" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A6" required class="form-control" placeholder="Enter text">
+b. <input name="B6" required class="form-control" placeholder="Enter text">
+c. <input name="C6" required class="form-control" placeholder="Enter text">
+d. <input name="D6" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS6" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 7 <textarea name="P7" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A7" required class="form-control" placeholder="Enter text">
+b. <input name="B7" required class="form-control" placeholder="Enter text">
+c. <input name="C7" required class="form-control" placeholder="Enter text">
+d. <input name="D7" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS7" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 8 <textarea name="P8" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A8" required class="form-control" placeholder="Enter text">
+b. <input name="B8" required class="form-control" placeholder="Enter text">
+c. <input name="C8" required class="form-control" placeholder="Enter text">
+d. <input name="D8" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS8" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 9 <textarea name="P9" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A9" required class="form-control" placeholder="Enter text">
+b. <input name="B9" required class="form-control" placeholder="Enter text">
+c. <input name="C9" required class="form-control" placeholder="Enter text">
+d. <input name="D9" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS9" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
+<b>Pertanyaan 10 <textarea name="P10" required class="form-control" placeholder="Enter text"></textarea>
+a. <input name="A10" required class="form-control" placeholder="Enter text">
+b. <input name="B10" required class="form-control" placeholder="Enter text">
+c. <input name="C10" required class="form-control" placeholder="Enter text">
+d. <input name="D10" required class="form-control" placeholder="Enter text">
+Jawaban : <select name="ANS10" required class="form-control"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option></select>
+<br><br>
                         
                     </div>
                 </form>
